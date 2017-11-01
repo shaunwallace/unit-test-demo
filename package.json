@@ -1,0 +1,9 @@
+{
+  "name": "unit-test-demo",
+  "version": "1.0.0",
+  "description": "example unit tests",
+  "main": "index.js",
+  "repository": " https://github.com/shaunwallace/unit-test-demo",
+  "author": "Shaun Wallace",
+  "license": "MIT"
+}
