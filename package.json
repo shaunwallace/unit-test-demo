@@ -5,5 +5,32 @@
   "main": "index.js",
   "repository": " https://github.com/shaunwallace/unit-test-demo",
   "author": "Shaun Wallace",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "precommit": "lint-staged",
+    "prettier": "prettier --single-quote --trailing-comma all --write \"examples/**/*.{js,jsx}\""
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "babel-jest": "^21.2.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-jest": "^21.2.0",
+    "eslint-plugin-jsx-a11y": "6.0.2",
+    "eslint-plugin-react": "7.4.0",
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "lint-staged": "^4.3.0",
+    "prettier": "^1.7.4"
+  }
 }

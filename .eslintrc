@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "airbnb",
+    "plugin:jest/recommended"
+  ],
+  "plugins": ["jest"],
+  "env": {
+    "browser": true,
+    "jest/globals": true
+  },
+  "rules": {
+    "max-len": "off"
+  }
+}
