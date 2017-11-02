@@ -1,5 +1,6 @@
 module.exports = {
   verbose: true,
+  automock: false,
   collectCoverage: true,
   transform: {
     '^.+\\.jsx?$': 'babel-jest',
@@ -14,4 +15,5 @@ module.exports = {
     },
   },
   notify: true,
+  setupFiles: ['./jestSetup.js'],
 };
