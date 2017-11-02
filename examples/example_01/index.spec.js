@@ -2,10 +2,12 @@ import * as fn from './index';
 
 describe('getDataType', () => {
   it('should return true if the value given matches the type given', () => {
+    /* brute force method */
     // expect(fn.getDataType({}, 'object')).toEqual(true);
     // expect(fn.getDataType([], 'array')).toEqual(true);
     // expect(fn.getDataType(() => {}, 'function')).toEqual(true);
 
+    /* alternative/iterative approach for multiple assertions in one go */
     const types = new Map([
       [{}, 'object'],
       [[], 'array'],
