@@ -27,6 +27,9 @@ or
 npm run test:update
 ```
 
+**Note** requires node >= 6.9x & npm >= 3
+
+
 ### Resources
 https://medium.com/@ferrannp/unit-testing-with-jest-redux-async-actions-fetch-9054ca28cdcd
 
