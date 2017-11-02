@@ -49,7 +49,7 @@ describe('getDataType', () => {
 
   it('should throw an error when the given type param is not a string', () => {
     const types = [{}, [], 1, false, null, undefined, NaN, () => {}];
-    types.forEach((type) => {
+    types.forEach(type => {
       // verify that the error throw includes the data type of the given type param
       expect(() => {
         fn.getDataType(null, type);
@@ -72,7 +72,7 @@ describe('removeNonAlphaCharaters', () => {
     ]);
 
     scenarios.forEach((value, key) => {
-      expect(fn.removeNonAlphaCharaters(key)).toEqual(value);
+      expect(fn.removeNonAlphaCharacters(key)).toEqual(value);
     });
   });
 });

@@ -1,17 +1,18 @@
-export function removeNonAlphaCharaters(str) {
+export function removeNonAlphaCharacters(str) {
   return str.replace(/[^A-Za-z]/g, '');
 }
 
 export function getDataType(value, type) {
   if (typeof type !== 'string') {
     throw new Error(
-      `unspported type param provided to getDataType: ${typeof type}`,
+      `unsupported type param provided to getDataType: ${typeof type}`,
     );
   }
 
   const typeToString = Object.prototype.toString.call(value);
+
   return (
-    removeNonAlphaCharaters(
+    removeNonAlphaCharacters(
       typeToString
         .split(/\s/)
         .pop()

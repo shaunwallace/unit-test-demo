@@ -11,6 +11,7 @@
   },
   "rules": {
     "max-len": "off",
-    "function-paren-newline": "off"
+    "function-paren-newline": "off",
+    "arrow-parens": "off"
   }
 }
