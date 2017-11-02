@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Img /> should display placeholder while loading 1`] = `
+exports[`<Img /> should display placeholder while loading when a placeholder property is given 1`] = `
 <div>
   <img
     alt=""
@@ -14,7 +14,7 @@ exports[`<Img /> should display placeholder while loading 1`] = `
 </div>
 `;
 
-exports[`<Img /> should render a Img wrapper to pass a placeholder element while the image loads 1`] = `
+exports[`<Img /> should not render a default placeholder element while the image loads if one is not provided 1`] = `
 <div>
   <img
     alt="alt-text"
@@ -22,8 +22,5 @@ exports[`<Img /> should render a Img wrapper to pass a placeholder element while
     onLoad={[Function]}
     src="../../assets/img/card.png"
   />
-  <div>
-    <span />
-  </div>
 </div>
 `;

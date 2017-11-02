@@ -24,7 +24,7 @@ class Img extends Component {
     imageUrl: '',
     defaultUrl: '',
     alt: '',
-    placeholder: React.createElement('span'),
+    placeholder: null,
     onLoad: noop,
     onError: noop,
     loaded: false,

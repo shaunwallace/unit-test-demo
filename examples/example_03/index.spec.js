@@ -8,7 +8,7 @@ import Img from './index';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('<Img />', () => {
-  it('should render a Img wrapper to pass a placeholder element while the image loads', () => {
+  it('should not render a default placeholder element while the image loads if one is not provided', () => {
     const props = {
       imageUrl: '../../assets/img/card.png',
       alt: 'alt-text',
@@ -21,7 +21,7 @@ describe('<Img />', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should set image status to loaded when loading complete', () => {
+  it('should set the image status to loaded when loading has completed', () => {
     const props = {
       imageUrl: '../../assets/img/card.png',
     };
@@ -33,7 +33,7 @@ describe('<Img />', () => {
     expect(component.state().imageStatus).toEqual('loaded');
   });
 
-  it('should display placeholder while loading', () => {
+  it('should display placeholder while loading when a placeholder property is given', () => {
     const props = {
       imageUrl: '../../assets/img/card.png',
       placeholder: <div />,
@@ -46,7 +46,6 @@ describe('<Img />', () => {
   it('should display errorMessage if img src not found', () => {
     const props = {
       imageUrl: '',
-      placeholder: null,
     };
 
     const component = shallow(<Img {...props} />);
@@ -58,7 +57,6 @@ describe('<Img />', () => {
   it('should display defaultImg if img src not given', () => {
     const props = {
       imageUrl: '',
-      placeholder: null,
       defaultUrl: '../../assets/img/card.png',
     };
 
@@ -70,7 +68,6 @@ describe('<Img />', () => {
   it('should display image from imageUrl', () => {
     const props = {
       imageUrl: '../../assets/img/card.png',
-      placeholder: null,
     };
 
     const component = shallow(<Img {...props} />);
@@ -83,7 +80,6 @@ describe('<Img />', () => {
 
     const props = {
       imageUrl: '../../assets/img/card.png',
-      placeholder: null,
       defaultUrl: '../../assets/img/default_card_1x.png',
     };
 
@@ -103,7 +99,6 @@ describe('<Img />', () => {
 
     const props = {
       imageUrl: '../../assets/img/card.png',
-      placeholder: null,
       defaultUrl: '../../assets/img/default_card_1x.png',
       loaded: true,
     };
