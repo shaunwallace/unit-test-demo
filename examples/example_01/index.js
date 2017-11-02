@@ -20,10 +20,11 @@ export function typeFactory(type) {
   return value => getDataType(value, type);
 }
 
+const isArray = typeFactory('array');
+const isObject = typeFactory('object');
+
 export function isEmpty(value) {
   const type = typeof value;
-  const isArray = typeFactory('array');
-  const isObject = typeFactory('object');
   // if the value is an array or object then check for the length of
   // the keys else check for an empty string and booleans and number types constitute a non empty value
   return (
