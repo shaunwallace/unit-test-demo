@@ -4,15 +4,19 @@ export function removeNonAlphaCharaters(str) {
 
 export function getDataType(value, type) {
   if (typeof type !== 'string') {
-    throw new Error(`unspported type param provided to getDataType: ${typeof type}`);
+    throw new Error(
+      `unspported type param provided to getDataType: ${typeof type}`,
+    );
   }
 
   const typeToString = Object.prototype.toString.call(value);
   return (
-    removeNonAlphaCharaters(typeToString
-      .split(/\s/)
-      .pop()
-      .toLowerCase()) === type.toLowerCase()
+    removeNonAlphaCharaters(
+      typeToString
+        .split(/\s/)
+        .pop()
+        .toLowerCase(),
+    ) === type.toLowerCase()
   );
 }
 

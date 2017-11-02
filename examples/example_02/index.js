@@ -26,7 +26,9 @@ export function get(endpoint = '', request = {}, parseResponse = true) {
   if (!endpoint) {
     throw new Error('making an api request without an endpoint is not allowed');
   } else if (typeof endpoint !== 'string') {
-    throw new Error(`making an api request requires an endpoint with the type of string but ${typeof endpoint} was provided`);
+    throw new Error(
+      `making an api request requires an endpoint with the type of string but ${typeof endpoint} was provided`,
+    );
   }
   // merge the default request object with any overrides
   // in-order to maintain the session cookie we need the

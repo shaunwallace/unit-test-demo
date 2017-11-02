@@ -14,7 +14,9 @@ describe('Erorr handling of improper endpoint', () => {
     const types = ['', 0, false, null, undefined];
 
     types.forEach((type) => {
-      expect(() => fn.get(type)).toThrow(new Error('making an api request without an endpoint is not allowed'));
+      expect(() => fn.get(type)).toThrow(
+        new Error('making an api request without an endpoint is not allowed'),
+      );
     });
   });
 
@@ -22,7 +24,11 @@ describe('Erorr handling of improper endpoint', () => {
     const types = [{}, [], () => {}, 1, true];
 
     types.forEach((type) => {
-      expect(() => fn.get(type)).toThrow(new Error(`making an api request requires an endpoint with the type of string but ${typeof type} was provided`));
+      expect(() => fn.get(type)).toThrow(
+        new Error(
+          `making an api request requires an endpoint with the type of string but ${typeof type} was provided`,
+        ),
+      );
     });
   });
 
@@ -30,13 +36,17 @@ describe('Erorr handling of improper endpoint', () => {
     fetch.mockRejectOnce(500);
     expect.assertions(1);
     // return expect(get('google.com/test')).rejects.toEqual(new Error(`error: ${JSON.stringify(500)}`));
-    await expect(fn.get('google.com/test')).rejects.toEqual(new Error(`error: ${JSON.stringify(undefined)}`));
+    await expect(fn.get('google.com/test')).rejects.toEqual(
+      new Error(`error: ${JSON.stringify(undefined)}`),
+    );
   });
 });
 
 describe('Handling failed requests', () => {
   it('should throw an error when a response contains an error code', () => {
-    expect(() => fn.handleErrors({ errorCode: '10001' })).toThrow(new Error(10001));
+    expect(() => fn.handleErrors({ errorCode: '10001' })).toThrow(
+      new Error(10001),
+    );
   });
 
   it('should return the response when no error code is found', () => {
@@ -78,7 +88,8 @@ describe('Promise chain of rest api calls', () => {
 describe('Handling invalid HTTP status codes', () => {
   it('should throw an error when the given status code is < 200 || > 300', () => {
     [0, 100, 199, 301, 302].forEach(code =>
-      expect(() => fn.checkStatus({ status: code })).toThrow(new Error(code)));
+      expect(() => fn.checkStatus({ status: code })).toThrow(new Error(code)),
+    );
   });
 
   it('should throw an error when there is no given status code', () => {
@@ -87,6 +98,7 @@ describe('Handling invalid HTTP status codes', () => {
 
   it('should return the response when the status code is within the appropriate range', () => {
     [200, 299].forEach(code =>
-      expect(fn.checkStatus({ status: code })).toMatchObject({ status: code }));
+      expect(fn.checkStatus({ status: code })).toMatchObject({ status: code }),
+    );
   });
 });

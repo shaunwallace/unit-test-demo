@@ -7,14 +7,14 @@ module.exports = {
   },
   setupTestFrameworkScriptFile: './node_modules/jest-enzyme/lib/index.js',
   collectCoverageFrom: ['examples/**/*.{js,jsx}'],
-  coverageThreshold: {
-    global: {
-      branches: 90,
-      functions: 90,
-      lines: 90,
-      staements: 90,
-    },
-  },
+  // coverageThreshold: {
+  //   global: {
+  //     branches: 90,
+  //     functions: 90,
+  //     lines: 90,
+  //     staements: 90,
+  //   },
+  // },
   notify: true,
   setupFiles: ['./jestSetup.js'],
 };
