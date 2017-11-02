@@ -1,4 +1,4 @@
-import * as fn from './';
+import * as fn from './index';
 
 describe('Returning json from fetch api call', () => {
   it('should return the json representation of a provided response object', () => {

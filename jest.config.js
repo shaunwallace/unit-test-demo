@@ -5,6 +5,7 @@ module.exports = {
   transform: {
     '^.+\\.jsx?$': 'babel-jest',
   },
+  setupTestFrameworkScriptFile: './node_modules/jest-enzyme/lib/index.js',
   collectCoverageFrom: ['examples/**/*.{js,jsx}'],
   coverageThreshold: {
     global: {

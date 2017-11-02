@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Img /> should display placeholder while loading 1`] = `
+<div>
+  <img
+    alt=""
+    onError={[Function]}
+    onLoad={[Function]}
+    src="../../assets/img/card.png"
+  />
+  <div>
+    <div />
+  </div>
+</div>
+`;
+
+exports[`<Img /> should render a Img wrapper to pass a placeholder element while the image loads 1`] = `
+<div>
+  <img
+    alt="alt-text"
+    onError={[Function]}
+    onLoad={[Function]}
+    src="../../assets/img/card.png"
+  />
+  <div>
+    <span />
+  </div>
+</div>
+`;

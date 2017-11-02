@@ -1,4 +1,4 @@
-import * as fn from './';
+import * as fn from './index';
 
 describe('getDataType', () => {
   it('should return true if the value given matches the type given', () => {

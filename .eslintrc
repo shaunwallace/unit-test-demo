@@ -4,11 +4,14 @@
     "plugin:jest/recommended"
   ],
   "plugins": ["jest"],
+  "parser": "babel-eslint",
   "env": {
     "browser": true,
     "jest/globals": true
   },
   "rules": {
-    "max-len": "off"
+    "max-len": "off",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off"
   }
 }
